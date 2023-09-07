@@ -1,11 +1,15 @@
 const Reported_cleaned_room_id = async (req, res) => {
-  //báo cáo đã dọn phòng cập nhật trạng thái phòng
+  var id = req.param("id");
+  res.send("báo cáo đã dọn phòng cập nhật trạng thái phòng " + id);
 };
 const Get_clean_room = async (req, res) => {
-  //Lấy danh sách phòng cần lau dọn
+  res.send("Lấy danh sách phòng cần lau dọn");
 };
 const Reported_broken_device_in_room = async (req, res) => {
-  //Báo cáo thiết bị hư
+  var id = req.params.id;
+  var bd = req.params.bd;
+
+  res.send("Báo cáo " + bd + " hư ở phòng " + id);
 };
 
 export default {

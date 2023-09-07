@@ -1,6 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import admin from "./admin/routers/index.js";
+import staff from "./staff/routers/index.js";
 import connect from "./database/connection.js";
 
 dotenv.config();
@@ -11,6 +12,7 @@ const port = process.env.PORT ?? 3000;
 var url = process.env.MongoURL;
 
 app.use("/admin", admin);
+app.use("/staff", staff);
 
 app.get("/", (req, res) => {
   res.send("this is homepage");
