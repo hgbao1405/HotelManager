@@ -6,10 +6,11 @@ export default mongoose.model(
   new Schema({
     id: ObjectId,
     name_sevice: {
-      //phòng hoặc nước uống, đồ ăn
+      //nước uống, đồ ăn
       type: String,
       required: true,
     },
+    dateAdd: { type: Date, required: true, default: Date.now() },
     price: Long,
     isdelete: Boolean,
   })

@@ -13,6 +13,9 @@ export default mongoose.model(
         message: "CMND hoặc CCCD phải lớn hơn 10 số",
       },
     },
+    room: {
+      type: { type: ObjectId, ref: "room" },
+    },
     nameCustomer: {
       type: String,
       required: true,
@@ -26,6 +29,7 @@ export default mongoose.model(
     },
     totalprice: { type: Long },
     isdelete: { type: Boolean },
-    datetime: { type: Date },
+    datetimeCheckin: { type: Date, default: Date.now }, //Ngày tạo
+    datetime: { type: Date }, //Ngày thanh toán
   })
 );
