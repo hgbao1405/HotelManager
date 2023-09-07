@@ -4,7 +4,6 @@ import roomController from "./roomController.js";
 import serviceController from "./serviceController.js";
 import staffController from "./staff.js";
 import typeroomController from "./typeroom.js";
-import roleController from "./roleController.js";
 
 export {
   billController,
@@ -13,5 +12,4 @@ export {
   serviceController,
   staffController,
   typeroomController,
-  roleController,
 };
