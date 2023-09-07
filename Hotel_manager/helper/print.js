@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import colors from "colors";
 
 class OutputType {
   static INFORMATION = "INFORMATION";
@@ -10,14 +11,18 @@ class OutputType {
 // thay màu khi in thông báo
 function print(message, OutputType) {
   switch (OutputType) {
-    case OutputType.INFORMATION:
-      console.log(chalk.white(message));
-    case OutputType.SUCCESS:
-      console.log(chalk.green(message));
-    case OutputType.WARNING:
-      console.log(chalk.yellow(message));
-    case OutputType.ERROR:
-      console.log(chalk.red(message));
+    case "INFORMATION":
+      console.log(message);
+      break;
+    case "SUCCESS":
+      console.log(colors.green(message));
+      break;
+    case "WARNING":
+      console.log(colors.yellow(message));
+      break;
+    case "ERROR":
+      console.log(colors.red(message));
+      break;
   }
 }
 

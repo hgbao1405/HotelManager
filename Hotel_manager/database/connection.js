@@ -9,6 +9,7 @@ async function connect() {
     return connection;
   } catch (error) {
     const { code } = error;
+    print("Cannot connect mongoose", OutputType.ERROR);
     if (error.code == 8000) {
       print("Wrong Username or Password", OutputType.ERROR);
       throw new Error("Wrong Username or Password");
@@ -16,8 +17,6 @@ async function connect() {
       print("Wrong server name/connection string", OutputType.ERROR);
       throw new Error("Wrong server name/connection string");
     }
-
-    print("Cannot connect mongoose", OutputType.ERROR);
     throw new Error("Cannot connect mongoose");
   }
 }

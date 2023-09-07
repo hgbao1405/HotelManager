@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
 
 app.listen(port, async () => {
   // Use connect method to connect to the Server
-  connect();
+  await connect();
   console.log("listening on port: http://localhost:" + port);
 });
