@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 // Connection URL. This is where your mongodb server is running.
 var url = process.env.MongoURL;
-
+app.use(express.json());
 app.use("/admin", admin);
 app.use("/staff", staff);
 

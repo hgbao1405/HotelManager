@@ -1,6 +1,5 @@
 import bill from "./bill.js";
 import billdetail from "./billdetail.js";
-import staff from "./staff.js";
 import room from "./room.js";
 import typeroom from "./typeroom.js";
 import staff from "./staff.js";

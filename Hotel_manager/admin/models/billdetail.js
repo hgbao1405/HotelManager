@@ -1,4 +1,3 @@
-import { Double, Long, ObjectId } from "mongodb";
 import mongoose, { Schema, ObjectId } from "mongoose";
 
 export default mongoose.model(
@@ -11,7 +10,7 @@ export default mongoose.model(
       required: true,
     },
     dateAdd: { type: Date, required: true, default: Date.now() },
-    price: Long,
+    price: Number,
     isdelete: Boolean,
   })
 );

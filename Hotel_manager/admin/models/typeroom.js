@@ -1,12 +1,3 @@
-class typeroom {
-  constructor(id, name, type, price, isdelete, status) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.isdelete = isdelete;
-  }
-}
-import { Double, Long, ObjectId } from "mongodb";
 import mongoose, { Schema, ObjectId } from "mongoose";
 export default mongoose.model(
   "typeroom",
@@ -16,11 +7,12 @@ export default mongoose.model(
       type: String,
       required: true,
       validate: {
-        validator: (value) => value.length > 5,
-        message: "Tên nhỏ phải lớn hơn 5 ký tự",
+        validator: (value) => value.length >= 3,
+        message: "Name of type room must larger than 2 character",
       },
     },
+    listRoom: { type: [{ type: ObjectId, ref: "room" }] },
     price: { type: Number },
-    isdelete: { type: Boolean },
+    isdelete: { type: Boolean, default: false },
   })
 );
